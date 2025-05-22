@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Marhey:wght@300..700&display=swap ');
+:root{
+    --azul_claro: rgb(0, 172, 230);
+    --amarelo_canario: rgb(255, 187, 0);
+    --verde_limao: rgb(0, 202, 0);
+    --preto: rgb(0, 0, 0);
+    --branco: rgb(255, 255, 255);
+    --vermelho: rgb(255, 0, 0);
+}
+#menu_topo{
+    background-color: var(--azul_claro);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 18px;
+}
+body{
+    margin: 0px;
+    font-family: 'Marhey';
+    background-image: url(imagens/nuvem.png);
+}
+#caixa_menus{
+    /* border: 1px solid red; */
+    display: flex;
+    gap: 10px;
+}
+.menus{
+    height: 100px;
+    width: 120px;
+    border-radius: 50px 0px 50px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--branco);
+}
+.menus:hover{
+    background-color: var(--amarelo_canario);
+    cursor: pointer;
+}
+
+.menu_ativo{
+    background-color: var(--vermelho);
+}
+
+#banner{
+    background-image: url(imagens/criancas.jpg);
+    height: 35vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#caixa_conteudo{
+    background-color: rgba(0, 172, 230, 0.75);
+    width: 550px;
+    height: 50%;
+    padding: 35px;
+    color: var(--branco);
+    text-align: center;
+    border-radius: 70px 15px 70px 15px ;
+}
+#caixa_conteudo h1{
+    font-size: 50px;
+    line-height: 55px;    
+}
+#caixa_conteudo p{
+    font-size: 25px;
+    line-height: 30px;  
+}
+
+.secoes{
+    /* border: 1px solid red; */
+    width: 70%;
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#criancas2{
+    min-width: 500px;
+    min-height: 350px;
+    background-image: url(imagens/criancas2.jpg);
+    border-radius: 30px 10px 30px 10px;
+}
+#conteudo_secao2{
+    padding: 20px;
+}
+
+.secoes h1{
+    font-size: 50px;
+    line-height: 55px;
+}
+
+#criancas3{
+    background-image: url(imagens/criancas3.jpg);
+    width: 65%;
+    height: 350px;
+    background-size: cover;
+    border-radius: 60px 0px 0px 60px;
+}
+#conteudo_secao3{
+    width: 35%;
+    color: var(--branco);
+    background-color: var(--verde_limao);
+    padding: 20px;
+    border-radius: 0px 60px 60px 0px;
+}
+
+#rodape{
+    background-color: var(--azul_claro);
+    display: flex;
+    padding: 50px 150px 50px 150px;
+}
+#coluna1{
+    border: 1px solid red;
+    height: 400px;
+    width: 50%;
+}
+#coluna2{
+    border: 1px solid red;
+    height: 400px;
+    width: 25%;
+}
+#coluna3{
+    border: 1px solid red;
+    height: 400px;
+    width: 25%;
+}
