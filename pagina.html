@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dolab Dashboard</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a202c;}
+        .bg-gradient-dark-purple {
+            background-image: linear-gradient(to bottom right, #3730a3, #1e1b4b);}
+        .bg-card {
+            background-color: #2d3748;}
+        .text-accent {
+            color: #818cf8;}
+        .border-accent {
+            border-color: #818cf8;}
+        .chart-line {
+            stroke: #818cf8;}
+        .chart-line-secondary {
+            stroke: #a78bfa;}
+        .progress-bar-thumb {
+            background-color: #818cf8;}
+        .sidebar-item:hover, .sidebar-item.active {
+            background-color: #4338ca;color: white;
+        }
+        .sidebar-item {
+            color: #a0aec0;}
+    </style>
+</head>
+<body class="flex h-screen text-gray-200">
+<aside class="w-64 bg-gradient-dark-purple p-6 space-y-6 flex flex-col">
+<div class="flex items-center space-x-3">
+<span class="material-icons text-white text-3xl">scatter_plot</span>
+<h1 class="text-2xl font-bold text-white">Site da Empresa</h1>
+</div>
+<nav class="flex-grow">
+<ul class="space-y-2">
+<li>
+<a class="flex items-center space-x-3 p-3 rounded-lg sidebar-item active" href="#">
+<span class="material-icons">dashboard</span>
+<span>Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 p-3 rounded-lg sidebar-item" href="#">
+<span class="material-icons">lightbulb</span>
+<span>Dashboard Light</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 p-3 rounded-lg sidebar-item" href="#">
+<span class="material-icons">account_balance_wallet</span>
+<span>Balance Page</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 p-3 rounded-lg sidebar-item" href="#">
+<span class="material-icons">credit_card</span>
+<span>Card Center</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 p-3 rounded-lg sidebar-item" href="#">
+<span class="material-icons">receipt_long</span>
+<span>Invoices</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 p-3 rounded-lg sidebar-item" href="#">
+<span class="material-icons">description</span>
+<span>Transaction Details</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 p-3 rounded-lg sidebar-item" href="#">
+<span class="material-icons">history</span>
+<span>Transaction History</span>
+</a>
+</li>
+</ul>
+<h2 class="mt-8 mb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Apps</h2>
+<ul class="space-y-2">
+<li>
+<a class="flex items-center space-x-3 p-3 rounded-lg sidebar-item" href="#">
+<span class="material-icons">apps</span>
+<span>Apps</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 p-3 rounded-lg sidebar-item" href="#">
+<span class="material-icons">bar_chart</span>
+<span>Charts</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 p-3 rounded-lg sidebar-item" href="#">
+<span class="material-icons">view_quilt</span>
+<span>Bootstrap</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 p-3 rounded-lg sidebar-item" href="#">
+<span class="material-icons">extension</span>
+<span>Plugins</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 p-3 rounded-lg sidebar-item" href="#">
+<span class="material-icons">widgets</span>
+<span>Widget</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 p-3 rounded-lg sidebar-item" href="#">
+<span class="material-icons">article</span>
+<span>Forms</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class="mt-auto p-4 bg-indigo-800 rounded-lg text-center">
+<span class="material-icons text-yellow-400 text-4xl">emoji_events</span>
+<p class="text-sm mt-2">Upgrade to Pro</p>
+<button class="mt-3 bg-yellow-400 text-indigo-900 text-sm font-semibold py-2 px-4 rounded-lg w-full">Upgrade</button>
+</div>
+</aside>
+<main class="flex-1 p-6 overflow-y-auto">
+<header class="flex justify-between items-center mb-8">
+<div class="flex items-center space-x-3">
+<span class="material-icons text-gray-400">menu</span>
+<h2 class="text-2xl font-semibold text-white">Dashboard</h2>
+</div>
+<div class="flex items-center space-x-4">
+<div class="relative">
+<span class="material-icons absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">search</span>
+<input class="bg-gray-700 text-white placeholder-gray-400 rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Search here..." type="text"/>
+</div>
+<span class="material-icons text-gray-400 cursor-pointer">notifications</span>
+<span class="material-icons text-gray-400 cursor-pointer">settings</span>
+<div class="flex items-center space-x-2">
+<img alt="User avatar" class="w-10 h-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeXg8blX7uauTKKkbON-X2777v_BbTr20gOM5hXW0PnXq3j_4uvBlrXoD2Y3OSJMHTj0FvHcJC_4CphE_YAuXBeBheLTX2DiMYEw_qpgVZEr71PeKlUfWuJzD-n2R_ILv21fhpSaFs8aIPcH9HpgmtHibepYOj2jfLWHorwUvxqWMsreB9rxZufZn4Xew2kKnxzTXjncA1wpti1kHfxVmf2SRJFvDk_PV7dDs_uLdCQW6IarFi-c1_y23hlXOAUAFUy2J91cJTMIY"/>
+<div>
+<p class="text-sm font-medium text-white">Adam Joe</p>
+<p class="text-xs text-gray-400">Admin</p>
+</div>
+</div>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 bg-card p-6 rounded-xl shadow-lg">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-semibold text-white">Your Balance Summary</h3>
+<div class="flex items-center space-x-2 text-sm text-gray-400">
+<button class="px-3 py-1 rounded-lg bg-gray-700 hover:bg-gray-600">Monthly</button>
+<button class="px-3 py-1 rounded-lg hover:bg-gray-600">Weekly</button>
+<span class="material-icons cursor-pointer">more_horiz</span>
+</div>
+</div>
+<div class="flex items-end space-x-4 mb-6">
+<div>
+<p class="text-xs text-gray-400">Income</p>
+<p class="text-2xl font-bold text-green-400">$450,234.00</p>
+</div>
+<div>
+<p class="text-xs text-gray-400">Expense</p>
+<p class="text-2xl font-bold text-red-400">$30,456</p>
+</div>
+</div>
+<div class="h-64 bg-gray-700 rounded-lg flex items-center justify-center">
+<svg class="w-full h-full" viewBox="0 0 600 300">
+<line stroke="#4a5568" stroke-width="2" x1="50" x2="550" y1="250" y2="250"></line>
+<line stroke="#4a5568" stroke-width="2" x1="50" x2="50" y1="50" y2="250"></line>
+<polyline class="chart-line" fill="none" points="50,200 100,150 150,180 200,100 250,120 300,80 350,100 400,150 450,130 500,190 550,170" stroke-width="3"></polyline>
+<polyline class="chart-line-secondary" fill="none" points="50,220 100,190 150,210 200,160 250,180 300,140 350,160 400,200 450,180 500,230 550,210" stroke-width="3"></polyline>
+<text fill="#a0aec0" font-size="12" x="70" y="270">SUN</text>
+<text fill="#a0aec0" font-size="12" x="120" y="270">MON</text>
+<text fill="#a0aec0" font-size="12" x="170" y="270">TUE</text>
+<text fill="#a0aec0" font-size="12" x="220" y="270">WED</text>
+<text fill="#a0aec0" font-size="12" x="270" y="270">THU</text>
+<text fill="#a0aec0" font-size="12" x="320" y="270">FRI</text>
+<text fill="#a0aec0" font-size="12" x="370" y="270">SAT</text>
+<text fill="#a0aec0" font-size="12" x="20" y="250">200</text>
+<text fill="#a0aec0" font-size="12" x="20" y="200">400</text>
+<text fill="#a0aec0" font-size="12" x="20" y="150">600</text>
+<text fill="#a0aec0" font-size="12" x="20" y="100">800</text>
+<text fill="#a0aec0" font-size="12" x="15" y="50">1000</text>
+</svg>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-card p-6 rounded-xl shadow-lg">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm text-gray-400">Expense</p>
+<p class="text-2xl font-bold text-white">$19,522</p>
+<p class="text-xs text-green-400">+2.5% than last month</p>
+</div>
+<div class="bg-green-500 p-2 rounded-full">
+<span class="material-icons text-white">arrow_upward</span>
+</div>
+</div>
+</div>
+<div class="bg-card p-6 rounded-xl shadow-lg">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm text-gray-400">Income</p>
+<p class="text-2xl font-bold text-white">$45,234</p>
+<p class="text-xs text-red-400">-7% than last month</p>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-accent flex items-center justify-center text-accent font-semibold">
+                            38%
+                        </div>
+</div>
+</div>
+<div class="bg-card p-6 rounded-xl shadow-lg">
+<div class="flex justify-between items-center">
+<div>
+<p class="text-sm text-gray-400">Transactions</p>
+<p class="text-2xl font-bold text-white">$984</p>
+</div>
+<div class="w-24 h-12">
+<svg viewBox="0 0 100 50">
+<polyline class="chart-line" fill="none" points="0,40 20,20 40,30 60,10 80,25 100,15" stroke-width="2"></polyline>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-card p-6 rounded-xl shadow-lg">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-semibold text-white">Pie Chart</h3>
+<span class="material-icons text-gray-400 cursor-pointer">more_horiz</span>
+</div>
+<div class="h-48 flex items-center justify-center">
+<svg class="w-40 h-40" viewBox="0 0 100 100">
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#f0abfc" stroke-width="15"></circle>
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#a78bfa" stroke-dasharray="251.2" stroke-dashoffset="62.8" stroke-width="15"></circle> 
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#34d399" stroke-dasharray="251.2" stroke-dashoffset="150.72" stroke-width="15"></circle> 
+</svg>
+</div>
+</div>
+<div class="bg-card p-6 rounded-xl shadow-lg">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-semibold text-white">Your Balance</h3>
+<span class="material-icons text-gray-400 cursor-pointer">more_horiz</span>
+</div>
+<div class="h-48 bg-gray-700 rounded-lg flex items-end justify-around p-2">
+<div class="w-4 bg-yellow-400 rounded-t-sm" style="height: 60%;"></div>
+<div class="w-4 bg-green-400 rounded-t-sm" style="height: 80%;"></div>
+<div class="w-4 bg-indigo-400 rounded-t-sm" style="height: 50%;"></div>
+<div class="w-4 bg-pink-400 rounded-t-sm" style="height: 70%;"></div>
+<div class="w-4 bg-blue-400 rounded-t-sm" style="height: 40%;"></div>
+<div class="w-4 bg-purple-400 rounded-t-sm" style="height: 90%;"></div>
+<div class="w-4 bg-yellow-400 rounded-t-sm" style="height: 65%;"></div>
+<div class="w-4 bg-green-400 rounded-t-sm" style="height: 75%;"></div>
+</div>
+</div>
+<div class="bg-card p-6 rounded-xl shadow-lg">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-semibold text-white">Admission Summary</h3>
+<span class="material-icons text-gray-400 cursor-pointer">more_horiz</span>
+</div>
+<p class="text-3xl font-bold text-white">$4,563 <span class="text-sm text-red-400 font-normal">-12% than last week</span></p>
+<div class="h-32 mt-4 bg-gray-700 rounded-lg flex items-end justify-around p-2">
+<div class="w-3 bg-indigo-500 rounded-t-sm" style="height: 30%;"></div>
+<div class="w-3 bg-pink-500 rounded-t-sm" style="height: 50%;"></div>
+<div class="w-3 bg-indigo-500 rounded-t-sm" style="height: 70%;"></div>
+<div class="w-3 bg-pink-500 rounded-t-sm" style="height: 40%;"></div>
+<div class="w-3 bg-indigo-500 rounded-t-sm" style="height: 60%;"></div>
+<div class="w-3 bg-pink-500 rounded-t-sm" style="height: 20%;"></div>
+<div class="w-3 bg-indigo-500 rounded-t-sm" style="height: 80%;"></div>
+</div>
+</div>
+<div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-card p-6 rounded-xl shadow-lg">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-semibold text-white">Others</h3>
+<span class="material-icons text-gray-400 cursor-pointer">more_horiz</span>
+</div>
+<p class="text-xs text-gray-400 mb-4">Lorem ipsum dolor sit amet</p>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="p-2 bg-green-600 bg-opacity-25 rounded-full">
+<span class="material-icons text-green-400">account_balance</span>
+</div>
+<div>
+<p class="font-medium text-white">Installment</p>
+<p class="text-xs text-gray-400">$1,401</p>
+</div>
+</div>
+<div class="w-16 h-2 bg-gray-700 rounded-full">
+<div class="w-3/4 h-full progress-bar-thumb rounded-full bg-green-400"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="p-2 bg-blue-600 bg-opacity-25 rounded-full">
+<span class="material-icons text-blue-400">trending_up</span>
+</div>
+<div>
+<p class="font-medium text-white">Investment</p>
+<p class="text-xs text-gray-400">$3,754</p>
+</div>
+</div>
+<div class="w-16 h-2 bg-gray-700 rounded-full">
+<div class="w-1/2 h-full progress-bar-thumb rounded-full bg-blue-400"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="p-2 bg-yellow-600 bg-opacity-25 rounded-full">
+<span class="material-icons text-yellow-400">home_work</span>
+</div>
+<div>
+<p class="font-medium text-white">Property</p>
+<p class="text-xs text-gray-400">$5,754</p>
+</div>
+</div>
+<div class="w-16 h-2 bg-gray-700 rounded-full">
+<div class="w-2/3 h-full progress-bar-thumb rounded-full bg-yellow-400"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-card p-6 rounded-xl shadow-lg">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-semibold text-white">Contacts</h3>
+<span class="material-icons text-gray-400 cursor-pointer">more_horiz</span>
+</div>
+<p class="text-xs text-gray-400 mb-4">You have 245 clients</p>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<img alt="Dedi Cahyadi avatar" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4nqmgDQBwQCIK28V_tffu5rpApSjxOnzsd44hcJaNTJvUNynXyRPraHbqfDHJjAbmZigGO0Fs9O-2GYvuRxft6ONL6B-hjZIkHta_JsCCJaySDqvmcFfRhQFGN_ygv6611SeCscoU1vHPN5s--xM7_dZQUABmiBjivyF53H-bEpd2fOGRJUBDkhNamywdYZoTA1q5dK6FI9wbyGQBwNt-AxyePJ43RfNKQrOVUvBG_24mf4vQ0ucFO0btqJaN9rpVxBH9AlK9qI8"/>
+<div>
+<p class="text-sm font-medium text-white">Dedi Cahyadi</p>
+<p class="text-xs text-gray-400">Head Manager</p>
+</div>
+</div>
+<span class="material-icons text-gray-400 cursor-pointer">more_vert</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<img alt="Evans John avatar" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXoM9ugu3AQ7PRcWKRgqDZM2GwHBwxWLNRDVr4054ChRvAvHPg8jtMYOyvzdwLLVI1b7wqvwz5RZ3cmz3V5SO99-aD4JgKJ_qyFsxRmSPTO_XNLQ38i0Q3R0E23F3ZC-TmDJub_PM1mOnTN1pZm6dMoZ0MORLFaK3FcJP9zT2cJwEDrP6vdCupgI155G2WQM32S3Fi9r-GumnPkVfe_CdW5XHRGRMkNEvqsEy7Q01_nzm52pfsNJuqVlNcLNIksXroYdcYjIyWTH0"/>
+<div>
+<p class="text-sm font-medium text-white">Evans John</p>
+<p class="text-xs text-gray-400">Programmer</p>
+</div>
+</div>
+<span class="material-icons text-gray-400 cursor-pointer">more_vert</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<img alt="Brian Brandon avatar" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd0Bc-Lq-i8_ZgHewqB-acIS84EvqvEaksAPyQEw_Ngnz-FD1K53sUh3TcHFu66dR5f9gY-StEqFSZNzursEo5jOd3XU-fIoVj0PmpAn8y1M2lKEkOGjzlTLPVuNpCusY3LX-tjQzb4zNgGnboNihJ3YiWVSmyo09CrA1Mnx5VqdmYGOhQtmJlLaOo2lhy7LEqZVQT9x8QUWuEH_n7qX86qV5FsGm42I5Sy1LRG3ccHnRWjP2NbcQ8h8Ycb84DYhW8780SIcr__AY"/>
+<div>
+<p class="text-sm font-medium text-white">Brian Brandon</p>
+<p class="text-xs text-gray-400">Graphic Designer</p>
+</div>
+</div>
+<span class="material-icons text-gray-400 cursor-pointer">more_vert</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+</body></html>

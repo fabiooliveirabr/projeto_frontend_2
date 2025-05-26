@@ -18,6 +18,7 @@
     padding-right: 30px;
     font-size: 18px;
 }
+
 body{
     margin: 0px;
     font-family: 'Marhey';
@@ -46,6 +47,10 @@ body{
     background-color: var(--vermelho);
 }
 
+#caixa_menus a{
+    text-decoration: none;
+}
+
 #banner{
     background-image: url(imagens/criancas.jpg);
     height: 35vw;
@@ -58,7 +63,7 @@ body{
 #caixa_conteudo{
     background-color: rgba(0, 172, 230, 0.75);
     width: 550px;
-    height: 50%;
+    height: 60%;
     padding: 35px;
     color: var(--branco);
     text-align: center;
@@ -80,6 +85,7 @@ body{
     margin: auto;
     margin-top: 50px;
     margin-bottom: 50px;
+    justify-content: center;
 }
 #criancas2{
     min-width: 500px;
@@ -99,7 +105,7 @@ body{
 #criancas3{
     background-image: url(imagens/criancas3.jpg);
     width: 65%;
-    height: 350px;
+    min-height: 350px;
     background-size: cover;
     border-radius: 60px 0px 0px 60px;
 }
@@ -174,17 +180,53 @@ body{
     height: 100vh;
     width: 200px;
     position: fixed;
-    left: 0px;
+    left: -250px;
     top: 0px;
     box-shadow: 1px 0px 10px var(--preto);
     z-index: 1000;
     padding-left: 20px;
     padding-right: 20px;
+    transition: all 0.3s;
+}
+.aparecer{
+    left: 0px !important;
 }
 
 
 /* Configuração pra tablet */
 @media screen and (min-width:768px) and (max-width:1280px) {
+    #coluna1{
+        max-width: 50%;
+    }
+    #coluna2{
+        max-width: 50%;
+        padding: 0px;
+    }
+    #coluna3{
+        min-width: 80%;
+        text-align: center;
+    }
+    #rodape{
+        flex-wrap: wrap;
+        padding: 20px;
+        justify-content: center;
+    }
+    #criancas3{
+        min-width: 90vw;
+        min-height: 40vw;
+        border-radius: 60px 60px 0px 0px;
+    }
+    #conteudo_secao3{
+        min-width: calc(90vw - 40px);
+        min-height: auto;
+        border-radius: 0px 0px 60px 60px;
+    }
+    .secoes{
+        flex-wrap: wrap;
+    }
+    #banner{
+        height: 50vw;
+    }
     #sanduiche{
         display: block;
     }
@@ -195,6 +237,54 @@ body{
 
 /* Configuração para smartphones */
 @media screen and (max-width: 767px){
+        #coluna1{
+        min-width: 100%;
+        text-align: center;
+    }
+    #coluna2{
+        min-width: 100%;
+        padding: 0px;
+        text-align: center;
+    }
+    #coluna3{
+        min-width: 80%;
+        text-align: center;
+    }
+    #rodape{
+        flex-wrap: wrap;
+        padding: 20px;
+        justify-content: center;
+    }
+    #criancas3{
+        min-width: 80vw;
+        max-height: 40vw;
+        border-radius: 60px 60px 0px 0px;
+    }
+    #conteudo_secao3{
+        min-width: calc(80vw - 40px);
+        min-height: auto;
+        border-radius: 0px 0px 60px 60px;
+    }
+    .secoes{
+        flex-wrap: wrap;
+    }
+    #criancas2{
+        min-width: 350px;
+        min-height: 350px;
+    }
+
+    #banner{
+        height: 60vw;
+    }
+    #caixa_conteudo{
+        width: 400px;
+        height: auto;
+        padding: 10px;
+    }
+    #caixa_conteudo h1{
+        font-size: 30px;
+        line-height: 30px;
+    }
     #sanduiche{
         display: block;
     }
